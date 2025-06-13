@@ -1,5 +1,6 @@
-# 2425 - Recuperación de entornos de desarrollo - DAW
+# 2425 - Recuperación de entornos de desarrollo - DAM / DAW
 
+> AVISO!!! Únicamente puedes usar tu IDE y la documentación de plantUML para generar los diagrmaas UML. El uso de cualquier recurso que no sean estos, supondrá la no superación de la prueba.
 
 Edita este archivo y responde a las siguientes preguntas. Luego, sube los cambios
 
@@ -159,7 +160,7 @@ Para la función calcularFactorial:
 
 ## RA4 (1 Puntos)
 
-### 7. (0,35 - 20 min) Partiendo del código corregido, se ha detectado un Code Smell (mal olor del código) que debéis identificado y corregir.
+### 7. (0,5 - 20 min) Partiendo del código corregido, se ha detectado un Code Smell (mal olor del código) que debéis identificado y corregir.
 
 Pista:
 
@@ -180,7 +181,7 @@ Pista:
 
 ---
 
-### 8. (0,2 - 10 min) ¿Qué espacios de trabajo tiene git y para qué sirven cada uno?
+### 8. (0,1 - 10 min) ¿Qué espacios de trabajo tiene git y para qué sirven cada uno?
 
 *Respuesta a la pregunta 8. (mínimo 200 palabras)*
 
@@ -216,7 +217,7 @@ Ejemplo de respuesta:
 ---
 
 
-### 10. (0,15 - 10 min) Tienes un código que tienes que documentar. Documenta correctamente la función `factorial` utilizando KDoc (usando el formato y etiquetas de kdoc), el sistema estándar de documentación en Kotlin.
+### 10. (0,1 - 10 min) Tienes un código que tienes que documentar. Documenta correctamente la función `factorial` utilizando KDoc (usando el formato y etiquetas de kdoc), el sistema estándar de documentación en Kotlin.
 
 La documentación de código es una parte fundamental del desarrollo, ya que ayuda a otros desarrolladores (y a ti mismo en el futuro) a entender mejor cómo funciona una función, qué espera como entrada y qué devuelve.
 
@@ -252,34 +253,9 @@ fun factorial(n: Int): Int {
 
 **Requisitos del Ejercicio**
 
-1. **Clases Principales**:
-
-   * Define una clase `Departamento` con sus propiedades y métodos esenciales.
-   * Crea una clase base `Empleado` que contenga los atributos y métodos comunes a todos los empleados.
-   * Define dos clases especializadas que son `Empleado’`s:
-     * `Jefe`: Representa a los empleados con responsabilidad de supervisión.
-     * `Subordinado`: Representa a los empleados bajo la supervisión de un jefe.
-
-2. **Relaciones entre Clases**:
-
-   * Implementa una relación entre `Departamento` y `Empleado`, indicando que un departamento puede contener múltiples empleados.
-   * Define una relación entre `Empleado` y las clases `Jefe` y `Subordinado`.
-   * Establece una relación donde un `Jefe` supervisa a uno o más `Subordinado`.
-
-3. **Propiedades y Métodos**:  
-   * **`Departamento`**
-     * `- id: int` → Identificador único del departamento.
-     * `- nombre: string` → Nombre del departamento.
-     * `+ agregarEmpleado(e: Empleado): void` → Método para añadir un empleado.
-     * `+ eliminarEmpleado(e: Empleado): void` → Método para eliminar un empleado.  
-   * **`Empleado`**
-     * `- id: int` → Identificador del empleado.
-     * `- nombre: string` → Nombre del empleado.  
-   * **`Jefe`**
-     * `- nivel: string` → Nivel jerárquico del jefe.
-     * `+ asignarTarea(): void` → Método para asignar tareas a subordinados.  
-   * **`Subordinado`**
-     * `+ recibirTarea(): void` → Método para recibir tareas del jefe.
+1. **Clases Principales**
+2. **Relaciones entre Clases**
+3. **Propiedades y Métodos**
 
 
 **Entrega:** 
@@ -289,14 +265,13 @@ fun factorial(n: Int): Int {
 
 
 
-
 2. Código fuente del diagrama de clases.
 
     *Respuesta a la pregunta 11.2*
 
 
 
-3. Explicación de las relaciones entre clases.
+3. Explicación de las clases, relaciones entre clases y propiedades y métodos.
 
     *Respuesta a la pregunta 11.3*
 

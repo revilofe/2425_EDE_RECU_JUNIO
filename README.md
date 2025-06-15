@@ -17,11 +17,11 @@ Edita este archivo y responde a las siguientes preguntas. Luego, sube los cambio
 Un ejemplo: Kotlin
 #### Kotlin — Ficha de características
 
-| Aspecto                         | Descripción detallada                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Nivel de abstracción**        | Lenguaje **de alto nivel**: se programa pensando en objetos y funciones, no en registros ni punteros. No obstante, conserva “puertas de servicio” (JNI, Kotlin/Native, `ByteBuffer`) para descender a bajo nivel cuando toca trabajar con C o controlar memoria manualmente.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Modo de ejecución**           | 1. **JVM-bytecode**: el compilador genera bytecode y el *HotSpot JIT* optimiza en tiempo de ejecución.<br>2. **Kotlin/Native**: *AOT* a binarios nativos para iOS, Linux, Windows, etc., sin máquina virtual.<br>3. **Kotlin/JS**: transpilación a JavaScript para front-ends web.<br>4. **Kotlin Multiplatform (KMP)**: un único código común + “expect/actual” para cada plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Paradigmas soportados**       | - **Orientado a objetos** (clases, herencia, interfaces).<br>- **Funcional** (funciones de orden superior, inmutabilidad, `map/reduce`, lambdas, *currying* light).<br>- **Reactivo/asincrónico**: *coroutines* y *flows* como ciudadanos de primera.<br>- **Basado en componentes/DSL**: gracias a funciones de extensión y receptores implícitos, escribir *mini-lenguajes* (DSL) es natural.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Aspecto                         | Descripción detallada                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nivel de abstracción**        | Lenguaje **de alto nivel**: se programa pensando en objetos y funciones, no en registros ni punteros. No obstante, conserva “puertas de servicio” (JNI, Kotlin/Native, `ByteBuffer`) para descender a bajo nivel cuando toca trabajar con C o controlar memoria manualmente.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Modo de ejecución**           | 1. **JVM-bytecode**: el compilador genera bytecode y el *HotSpot JIT* optimiza en tiempo de ejecución.<br>2. **Kotlin/Native**: *AOT* a binarios nativos para iOS, Linux, Windows, etc., sin máquina virtual.<br>3. **Kotlin/JS**: transpilación a JavaScript para front-ends web.<br>4. **Kotlin Multiplatform (KMP)**: un único código común + “expect/actual” para cada plataforma.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Paradigmas soportados**       | - **Orientado a objetos** (clases, herencia, interfaces).<br>- **Funcional** (funciones de orden superior, inmutabilidad, `map/reduce`, lambdas, *currying* light).<br>- **Reactivo/asincrónico**: *coroutines* y *flows* como ciudadanos de primera.<br>- **Basado en componentes/DSL**: gracias a funciones de extensión y receptores implícitos, escribir *mini-lenguajes* (DSL) es natural.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Características distintivas** | • **Null Safety**: el compilador no deja que un `null` se cuele sin tu permiso (`?`, `!!`).<br>• **Type Inference**: escribe `val saludo = "Hola"` y te olvidas de `String`.<br>• **Data Classes & Records**: `data class Usuario(val id:Int, val nombre:String)` genera `equals`, `hashCode`, `copy`, `toString` y *componentN*.<br>• **Coroutines**: concurrencia ligera.<br>• **Extension Functions/Properties**: añade métodos a clases ajenas sin herencia ni patrón Decorator.<br>• **Interoperabilidad total con Java**: usa cualquier librería Java como si fuera nativa, y viceversa.<br>• **Compilación incremental** y *gradle-friendly*: ciclos de feedback rápidos.<br>• **Kotlin 2.x** (2024-25): *K2* compiler, velocidad de compilación mejorada, inferencia de tipos más potente y nuevo *frontend* unificado. |
 
 
@@ -91,8 +91,7 @@ fun calcularSumatoria(n: Int): Int {
 fun calcularFactorial(n: Int): Int {  
     var resultado = 0      
     for (i in 0..n) {      
-        resultado *= 1     
-    }  
+    resultado *= 1}  
     return resultado  
 }
 
@@ -100,8 +99,7 @@ fun calcularFactorial(n: Int): Int {
 fun factorial(n: Int): Int {  
     var resultado = 0  
     for (i in 0..n) {  
-        resultado *= 1  
-    }  
+    resultado *= 1}  
     return resultado  
 }
 ``` 
@@ -114,12 +112,12 @@ fun factorial(n: Int): Int {
     *Respuesta a la pregunta 5.1*
 
 
-2. Cada error identificado.
+2. Cada error identificado, explicando por qué es un error y cómo se ha corregido.
 
     *Respuesta a la pregunta 5.2*
 
 
-3. Captura pantalla usando el debug.
+3. Captura pantalla usando el debug, en donde se muestre el valor de las variables y el flujo de ejecución del programa.
 
     *Respuesta a la pregunta 5.3*
 
@@ -130,14 +128,16 @@ fun factorial(n: Int): Int {
 
 ### 6. (0,5 - 20 min) Partiendo del código resultado del ejercicio anterior, se te pide que escribas tests unitarios utilizando el framework Kotest para validar el correcto funcionamiento de las funciones `calcularSumatoria` y `calcularFactorial`.
 
+> **Importante:** No es estrictamente necesario que el código de las funciones esté corregido para realizar los tests, pero sí es recomendable que lo esté para que los tests sean significativos y útiles.
+
 ¿Qué se quiere probar?
 
-Para la función calcularSumatoria:
+Para la función `calcularSumatoria`:
 
 * Que devuelva la suma correcta de los números desde 1 hasta n.
 * Que devuelva 0 cuando el número de entrada es 0\.
 
-Para la función calcularFactorial:
+Para la función `calcularFactorial`:
 
 * Que devuelva el producto correcto de los números desde 1 hasta n.
 * Que devuelva 1 cuando el número de entrada es 0, ya que el factorial de 0 es 1\.
@@ -162,6 +162,9 @@ Para la función calcularFactorial:
 
 ### 7. (0,5 - 20 min) Partiendo del código corregido, se ha detectado un Code Smell (mal olor del código) que debéis identificado y corregir.
 
+> **Importante:** No es estrictamente necesario que el código de las funciones esté corregido para realizar la refactorización, pero sí es recomendable que lo esté para que la refactorización sea significativa y útil.
+
+
 Pista:
 
 * Code Smell identificado: Código Duplicado (Duplicate Code).
@@ -172,7 +175,6 @@ Pista:
 1. Explicación en qué consiste el code smell *`Duplicate Code`* y el patrón de refactorización *`Extract Method`* y qué soluciona.
 
    *Respuesta a la pregunta 7.1*
-
 
 
 2. El código que se ha corregido después de aplicar la refactorización.
@@ -197,7 +199,7 @@ Ejemplo de respuesta:
 *Responde a las siguientes situaciones:*
 
 1. Ver el historial de commits en una sola linea.
-   + comando: 
+    + comando: 
    
 2. Deshacer el último commit y deshacer cambios. Eliminar los cambios.
     + comando:
@@ -221,26 +223,14 @@ Ejemplo de respuesta:
 
 La documentación de código es una parte fundamental del desarrollo, ya que ayuda a otros desarrolladores (y a ti mismo en el futuro) a entender mejor cómo funciona una función, qué espera como entrada y qué devuelve.
 
-**Entregar:** El código, en el que se ha documentado siguiendo el formato KDOC. Asegúrate de incluir las secciones.  
+**Entregar:** El código, en el que se ha documentado siguiendo las etiquetas y el formato KDOC. Asegúrate de incluir las secciones.   
 * La descripción general de la función.
 * Excepción que lanza.
 * Los parámetros que recibe.
 * El valor de retorno que proporciona.
 * Ejemplos de uso si se considera necesario.
 
-Código base sin documentación:
-```kotlin
-fun factorial(n: Int): Int {
-    require(n >= 0) { "El número debe ser mayor o igual a 0" } // Validación de entrada
-    var resultado = 1
-    for (i in 1..n) {
-        resultado *= i
-    }
-    return resultado
-}
-```
-
-*Respuesta a la pregunta 10: Código con KDoc*
+*Respuesta a la pregunta 10: Código fuente documentado con KDoc*
 
 ---
 
@@ -288,7 +278,7 @@ El sistema gestiona a los usuarios en tres estados fundamentales:
 
 * **Activo**: El usuario tiene acceso completo al sistema.
 * **Bloqueado**: El usuario ha sido restringido debido a intentos fallidos de inicio de sesión o actividad sospechosa.
-* **Desactivado**: El usuario ha decidido desactivar su cuenta o esta ha sido desactivada automáticamente por inactividad prolongada.
+* **Desactivado**: El usuario ha decidido desactivar su cuenta o esta ha sido desactivada automáticamente por inactividad prolongada. No tiene porque estar activo en el sistema para pasar a Desactivado.
 
 **Requisitos del Ejercicio**
 
